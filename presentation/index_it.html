@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head lang="it">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Le CTF di Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #572</h3>
+                            <h2 class="section-title">Un cerchio è un quadrato</h2>
+                            <p>
+Alice e Bob vivono su un pianeta particolare: non è né piatto né sferico, è un cubo! Desiderano ottimizzare la loro connessione cablata in superficie per ridurre al minimo la latenza delle loro comunicazioni.
+<br /><br />
+Il cubo ha dimensioni 32x32x32 e il formato dei punti in cui vivono Alice e Bob è il seguente: <code>[0,2,14]</code> o <code>[32,28,11]</code>. Si nota che questi punti si trovano effettivamente sulla superficie del loro pianeta.
+<br /><br />
+Per ridurre al minimo le comunicazioni cablate, Alice e Bob devono trovare la distanza più breve <em>in superficie</em> tra una serie di coppie di punti. Per semplificare i calcoli e conservare solo valori interi, si richiede il quadrato della distanza del percorso più breve (sulla superficie) tra ciascuna coppia di punti.
+<br /><br />
+Riprendendo l'esempio precedente, il percorso di distanza minima atteso tra i punti <code>[0,2,14]</code> e <code>[32,28,11]</code> sarebbe 3789. Questo percorso passa per il punto <code>[13,0,0]</code>.
+<br /><br />
+<strong>Nota:</strong> il file fornito <code>un-cercle-est-un-carre.py</code> è la parte server che risponde al servizio. Non forniamo il file <code>minimum_distance.py</code>. Questo è referenziato perché viene utilizzato per verificare le tue risposte: il tuo obiettivo è scrivere la funzione <code>minimumDistanceOnCube</code>.
+<br /><img src="./assets/images/un-cercle-est-un-carre.jpg">
+                            </p>
+                            <h4>File da esaminare:</h4>
+                            <p>../files/un-cercle-est-un-carre.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Link ufficiale:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/</a>
+                                <br />
+                                Autore: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprendimento</h3>
+                            <h2 class="section-title">Documentazione e Video</h2>
+                            <p class="section-subtitle">
+                                Nessuna documentazione al momento
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aiuto</h3>
+                            <h2 class="section-title">Consigli e indizi</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Discussione su Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Torna all'inizio della pagina" title="Torna in cima al sito"></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Cyrhades CTFs</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #572</h3>
+                            <h2 class="section-title">A circle is a square</h2>
+                            <p>
+Alice and Bob live on a peculiar planet: it is neither flat nor spherical, it's a cube! They want to optimize their wired surface connection in order to minimize communication latency.
+<br /><br />
+The cube has dimensions 32x32x32 and the format of the points where Alice and Bob live is as follows: <code>[0,2,14]</code> or <code>[32,28,11]</code>. Note that these points are indeed located on the surface of their planet.
+<br /><br />
+To minimize wired communications, Alice and Bob need to find the shortest distance <em>on the surface</em> between a series of pairs of points. To simplify calculations and keep only integer values, the square of the shortest path distance (on the surface) between each pair of points is expected.
+<br /><br />
+Taking the previous example, the expected minimum distance path between points <code>[0,2,14]</code> and <code>[32,28,11]</code> would be 3789. This path passes through the point <code>[13,0,0]</code>.
+<br /><br />
+<strong>Note:</strong> the provided file <code>un-cercle-est-un-carre.py</code> is the server-side code that answers the service. We do not provide the <code>minimum_distance.py</code> file. It is referenced because it is used to verify your answers: your goal is to write the <code>minimumDistanceOnCube</code> function.
+<br /><img src="./assets/images/un-cercle-est-un-carre.jpg">
+                            </p>
+                            <h4>File to study:</h4>
+                            <p>../files/un-cercle-est-un-carre.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Official link:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/</a>
+                                <br />
+                                Author: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Learning</h3>
+                            <h2 class="section-title">Documentation and Videos</h2>
+                            <p class="section-subtitle">
+                                No documentation at the moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Help</h3>
+                            <h2 class="section-title">Advice and clues</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Discord thread</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Scroll to top of page" title="Scroll to top"></a>
+    </div>
+</body>
+
+</html>

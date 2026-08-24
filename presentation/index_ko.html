@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head lang="ko">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Cyrhades의 CTF</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>챌린지 #572</h3>
+                            <h2 class="section-title">원은 정사각형이다</h2>
+                            <p>
+앨리스와 밥은 독특한 행성에 살고 있습니다. 이 행성은 평평하지도 구형도 아닌 바로 정육면체입니다! 그들은 통신 지연 시간을 최소화하기 위해 표면 유선 연결을 최적화하고자 합니다.
+<br /><br />
+정육면체의 크기는 32x32x32이며 앨리스와 밥이 사는 지점의 형식은 <code>[0,2,14]</code> 또는 <code>[32,28,11]</code>입니다. 이 지점들은 행성의 표면에 위치해 있음을 알 수 있습니다.
+<br /><br />
+유선 통신을 최소화하기 위해 앨리스와 밥은 일련의 점 쌍 사이의 <em>표면상</em> 최단 거리를 찾아야 합니다. 계산을 단순화하고 정수 값만 유지하기 위해 각 점 쌍 사이의 최단 경로(표면상) 거리의 제곱을 구해야 합니다.
+<br /><br />
+이전 예시를 다시 살펴보면, 점 <code>[0,2,14]</code>와 <code>[32,28,11]</code> 사이의 예상 최소 거리 경로는 3789입니다. 이 경로는 점 <code>[13,0,0]</code>을 통과합니다.
+<br /><br />
+<strong>참고:</strong> 제공된 파일 <code>un-cercle-est-un-carre.py</code>는 서비스에 응답하는 서버 측 코드입니다. <code>minimum_distance.py</code> 파일은 제공되지 않습니다. 이 파일은 응답을 확인하는 데 사용되므로 참조되었습니다. 여러분의 목표는 <code>minimumDistanceOnCube</code> 함수를 작성하는 것입니다.
+<br /><img src="./assets/images/un-cercle-est-un-carre.jpg">
+                            </p>
+                            <h4>분석할 파일:</h4>
+                            <p>../files/un-cercle-est-un-carre.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                공식 링크:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/</a>
+                                <br />
+                                작성자: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>학습</h3>
+                            <h2 class="section-title">문서 및 동영상</h2>
+                            <p class="section-subtitle">
+                                현재 문서가 없습니다
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>도움말</h3>
+                            <h2 class="section-title">조언 및 힌트</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Discord 스레드</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="맨 위로 이동" title="페이지 상단으로 이동"></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head lang="pl">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CTF-y od Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Wyzwanie #572</h3>
+                            <h2 class="section-title">Koło jest kwadratem</h2>
+                            <p>
+Alice i Bob żyją na osobliwej planecie: nie jest ona ani płaska, ani kulista – jest sześcianem! Chcą zoptymalizować swoje przewodowe połączenie na powierzchni, aby zminimalizować opóźnienia w komunikacji.
+<br /><br />
+Sześcian ma wymiary 32x32x32, a format punktów, w których mieszkają Alice i Bob, to <code>[0,2,14]</code> lub <code>[32,28,11]</code>. Zauważmy, że punkty te rzeczywiście znajdują się na powierzchni ich planety.
+<br /><br />
+Aby zminimalizować komunikację przewodową, Alice i Bob muszą znaleźć najkrótszą odległość <em>po powierzchni</em> między serią par punktów. Aby uprościć obliczenia i zachować wyłącznie wartości całkowite, oczekiwany jest kwadrat odległości najkrótszej ścieżki (po powierzchni) między każdą parą punktów.
+<br /><br />
+Wracając do poprzedniego przykładu, oczekiwana minimalna droga między punktami <code>[0,2,14]</code> a <code>[32,28,11]</code> wynosiłaby 3789. Ścieżka ta przechodzi przez punkt <code>[13,0,0]</code>.
+<br /><br />
+<strong>Uwaga:</strong> dostarczony plik <code>un-cercle-est-un-carre.py</code> stanowi część serwerową obsługującą usługę. Nie udostępniamy pliku <code>minimum_distance.py</code>. Jest on wskazany, ponieważ służy do weryfikacji Twoich odpowiedzi: Twoim celem jest napisanie funkcji <code>minimumDistanceOnCube</code>.
+<br /><img src="./assets/images/un-cercle-est-un-carre.jpg">
+                            </p>
+                            <h4>Plik do przeanalizowania:</h4>
+                            <p>../files/un-cercle-est-un-carre.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Oficjalny link:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/</a>
+                                <br />
+                                Autor: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Nauka</h3>
+                            <h2 class="section-title">Dokumentacja i wideo</h2>
+                            <p class="section-subtitle">
+                                Brak dokumentacji w tej chwili
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Pomoc</h3>
+                            <h2 class="section-title">Porady i wskazówki</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Wątek na Discordzie</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Przewiń do góry" title="Powrót na górę strony"></a>
+    </div>
+</body>
+
+</html>

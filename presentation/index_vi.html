@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head lang="vi">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Các CTF của Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Thử thách #572</h3>
+                            <h2 class="section-title">Một hình tròn là một hình vuông</h2>
+                            <p>
+Alice và Bob sống trên một hành tinh đặc biệt: nó không phẳng, cũng không phải hình cầu, mà là một hình lập phương! Họ muốn tối ưu hóa kết nối có dây trên bề mặt nhằm giảm thiểu độ trễ trong liên lạc.
+<br /><br />
+Hình lập phương có kích thước 32x32x32 và định dạng các điểm nơi Alice và Bob sinh sống như sau: <code>[0,2,14]</code> hoặc <code>[32,28,11]</code>. Lưu ý rằng các điểm này thực sự nằm trên bề mặt hành tinh của họ.
+<br /><br />
+Để giảm thiểu liên lạc có dây, Alice và Bob cần tìm khoảng cách ngắn nhất <em>trên bề mặt</em> giữa một loạt các cặp điểm. Để đơn giản hóa tính toán và chỉ giữ lại các giá trị nguyên, kết quả cần tìm là bình phương khoảng cách của đường đi ngắn nhất (trên bề mặt) giữa mỗi cặp điểm.
+<br /><br />
+Lấy lại ví dụ trước, đường đi có khoảng cách tối thiểu kỳ vọng giữa các điểm <code>[0,2,14]</code> và <code>[32,28,11]</code> sẽ là 3789. Đường đi này đi qua điểm <code>[13,0,0]</code>.
+<br /><br />
+<strong>Lưu ý:</strong> tệp được cung cấp <code>un-cercle-est-un-carre.py</code> bao gồm phần máy chủ phản hồi dịch vụ. Chúng tôi không cung cấp tệp <code>minimum_distance.py</code>. Tệp này được tham chiếu vì nó được sử dụng để kiểm tra câu trả lời của bạn: mục tiêu của bạn là viết hàm <code>minimumDistanceOnCube</code>.
+<br /><img src="./assets/images/un-cercle-est-un-carre.jpg">
+                            </p>
+                            <h4>Tệp cần nghiên cứu:</h4>
+                            <p>../files/un-cercle-est-un-carre.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Liên kết chính thức:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/</a>
+                                <br />
+                                Tác giả: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Học tập</h3>
+                            <h2 class="section-title">Tài liệu và Video</h2>
+                            <p class="section-subtitle">
+                                Hiện tại chưa có tài liệu nào
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Trợ giúp</h3>
+                            <h2 class="section-title">Lời khuyên và manh mối</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Luồng trên Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Cuộn lên đầu trang" title="Về đầu trang"></a>
+    </div>
+</body>
+
+</html>

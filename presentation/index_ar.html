@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head lang="ar">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - تحديات CTF لـ Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>تحدي #572</h3>
+                            <h2 class="section-title">الدائرة هي مربع</h2>
+                            <p>
+يعيش أليس وبوب على كوكب غريب: فهو ليس مسطحاً ولا كروياً، بل هو مكعب! يرغبان في تحسين اتصالهما السلكي على السطح لتقليل زمن استجابة اتصالاتهما.
+<br /><br />
+أبعاد المكعب هي 32x32x32 وصيغة النقاط التي يعيش فيها أليس وبوب هي كالتالي: <code>[0,2,14]</code> أو <code>[32,28,11]</code>. نلاحظ أن هذه النقاط تقع بالفعل على سطح كوكبهما.
+<br /><br />
+لتقليل الاتصالات السلكية، يحتاج أليس وبوب إلى إيجاد أقصر مسافة <em>على السطح</em> بين سلسلة من أزواج النقاط. ولتبسيط الحسابات والاحتفاظ بقيم صحيحة فقط، يُتوقع الحصول على مربع مسافة أقصر مسار (على السطح) بين كل زوج من النقاط.
+<br /><br />
+بالعودة إلى المثال السابق، فإن المسار ذو المسافة الصغرى المتوقعة بين النقطتين <code>[0,2,14]</code> و <code>[32,28,11]</code> سيكون 3789. يمر هذا المسار بالنقطة <code>[13,0,0]</code>.
+<br /><br />
+<strong>ملاحظة:</strong> الملف المقدم <code>un-cercle-est-un-carre.py</code> هو جزء الخادم الذي يجيب على الخدمة. نحن لا نوفر ملف <code>minimum_distance.py</code>. تمت الإشارة إليه لأنه يُستخدم للتحقق من إجاباتك: هدفك هو كتابة الدالة <code>minimumDistanceOnCube</code>.
+<br /><img src="./assets/images/un-cercle-est-un-carre.jpg">
+                            </p>
+                            <h4>الملف المراد دراسته:</h4>
+                            <p>../files/un-cercle-est-un-carre.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                الرابط الرسمي:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/</a>
+                                <br />
+                                المؤلف: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>التعليم</h3>
+                            <h2 class="section-title">الوثائق ومقاطع الفيديو</h2>
+                            <p class="section-subtitle">
+                                لا توجد وثائق في الوقت الحالي
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>المساعدة</h3>
+                            <h2 class="section-title">نصائح وتلميحات</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">محادثة على Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="الرجوع إلى أعلى الصفحة" title="العودة إلى أعلى الموقع"></a>
+    </div>
+</body>
+
+</html>

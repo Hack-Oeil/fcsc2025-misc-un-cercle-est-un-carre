@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head lang="th">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CTF ของ Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ชาเลนจ์ #572</h3>
+                            <h2 class="section-title">วงกลมคือสี่เหลี่ยมจัตุรัส</h2>
+                            <p>
+อลิซและบ็อบอาศัยอยู่บนดาวเคราะห์ที่แปลกประหลาด: มันไม่ได้แบนและไม่ได้เป็นทรงกลม แต่มันเป็นลูกบาศก์! พวกเขาต้องการปรับปรุงการเชื่อมต่อแบบมีสายบนพื้นผิวให้เหมาะสมเพื่อลดความล่าช้าในการสื่อสาร
+<br /><br />
+ลูกบาศก์มีขนาด 32x32x32 และรูปแบบของจุดที่อลิซและบ็อบอาศัยอยู่คือ <code>[0,2,14]</code> หรือ <code>[32,28,11]</code> จะสังเกตได้ว่าจุดเหล่านี้ตั้งอยู่บนพื้นผิวของดาวเคราะห์จริง ๆ
+<br /><br />
+เพื่อลดการสื่อสารทางสาย อลิซและบ็อบจำเป็นต้องหาระยะทางที่สั้นที่สุด<em>บนพื้นผิว</em>ระหว่างคู่ของจุดต่าง ๆ เพื่อให้การคำนวณง่ายขึ้นและคงไว้เฉพาะค่าจำนวนเต็ม คำตอบที่ต้องการคือกำลังสองของระยะทางของเส้นทางที่สั้นที่สุด (บนพื้นผิว) ระหว่างจุดแต่ละคู่
+<br /><br />
+จากตัวอย่างก่อนหน้า เส้นทางระยะทางสั้นที่สุดที่คาดหวังระหว่างจุด <code>[0,2,14]</code> และ <code>[32,28,11]</code> คือ 3789 เส้นทางนี้ตัดผ่านจุด <code>[13,0,0]</code>
+<br /><br />
+<strong>หมายเหตุ:</strong> ไฟล์ที่ให้มา <code>un-cercle-est-un-carre.py</code> เป็นส่วนของเซิร์ฟเวอร์ที่ตอบสนองต่อบริการ เราไม่ได้ให้ไฟล์ <code>minimum_distance.py</code> ไฟล์นี้ถูกอ้างถึงเนื่องจากใช้ในการตรวจสอบคำตอบของคุณ: เป้าหมายของคุณคือการเขียนฟังก์ชัน <code>minimumDistanceOnCube</code>
+<br /><img src="./assets/images/un-cercle-est-un-carre.jpg">
+                            </p>
+                            <h4>ไฟล์ที่ต้องศึกษา:</h4>
+                            <p>../files/un-cercle-est-un-carre.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                ลิงก์อย่างเป็นทางการ:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/</a>
+                                <br />
+                                ผู้เขียน: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>การเรียนรู้</h3>
+                            <h2 class="section-title">เอกสารและวิดีโอ</h2>
+                            <p class="section-subtitle">
+                                ยังไม่มีเอกสารในขณะนี้
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ความช่วยเหลือ</h3>
+                            <h2 class="section-title">คำแนะนำและคำใบ้</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">เธรดบน Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="เลื่อนขึ้นไปด้านบน" title="กลับสู่ด้านบนของเว็บไซต์"></a>
+    </div>
+</body>
+
+</html>
